@@ -8,10 +8,9 @@ function tratarErro(erro) {
 
 function pegarArquivo(caminhoDoArquivo){
     const encoding = "utf-8";
-    fs.promises
-    .readFile(caminhoDoArquivo, encoding) 
-    .then((texto) => console.log(chalk.bgMagentaBright(texto)))
-    .catch(tratarErro);
+    const texto = fs.promises.readFile(caminhoDoArquivo,
+        encoding);
+        console.log(chalk.redBright(texto));
 }
 
 pegarArquivo("./arquivos/texto.md");
