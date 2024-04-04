@@ -4,7 +4,7 @@ import fs from "fs";
 
 const caminho = process.argv;
 
-function imprimirLista(resultado, identificador = " ") {
+function imprimirLista(resultado, identificador = "") {
   console.log(
     chalk.bgWhite("lista de links"),
     chalk.bgGreen(identificador),
@@ -13,6 +13,8 @@ function imprimirLista(resultado, identificador = " ") {
 
 async function processarTexto(argumentos) {
   const caminho = argumentos[2];
+  const valida = argumentos[3];
+  console.log(valida);
   
   try{
       fs.lstatSync(caminho);
